@@ -1,13 +1,13 @@
-
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
-  labels:
-    env: test
+    name: nginx
+    labels:
+        env: test
 spec:
-  containers:
-  - name: nginx
-    image: nginx
-    imagePullPolicy: IfNotPresent
-  nodeSelector:
+    containers:
+        -
+            name: nginx
+            image: nginx
+            imagePullPolicy: IfNotPresent
+    nodeSelector: null
