@@ -6,7 +6,6 @@ metadata:
         env: test
 spec:
     containers:
-        -
             name: nginx
             image: nginx
             imagePullPolicy: IfNotPresent
