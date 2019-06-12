@@ -9,8 +9,8 @@ RUN powershell -Command \
 
 RUN powershell -Command choco install sqlite -y;
 
-COPY scripts/queries.txt .
-COPY scripts/createdb.ps1 .
+ADD https://raw.githubusercontent.com/aubyoung/thanos/master/AutomatedCreationOfDatabase/SQLite/scripts/createdb.ps1 .
+ADD https://raw.githubusercontent.com/aubyoung/thanos/master/AutomatedCreationOfDatabase/SQLite/scripts/queries.txt .
 
 RUN powershell -Command Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
@@ -22,5 +22,3 @@ RUN powershell -Command Import-Module PSSQLite
 
 # Run PowerShell script to create and populate the SQLite database
 RUN powershell -Command ./createdb.ps1
-
-
